@@ -1,0 +1,246 @@
+/* App.css */
+@import './assets/styles/base.css';
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+  }
+  
+  .header {
+    background-color: #4DA8DA;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    border-bottom: 4px solid #357ABD;
+  }
+  
+  h1, h2 {
+    color: #4DA8DA;
+  }
+  
+  button {
+    background-color: #4DA8DA;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #357ABD;
+  }
+  
+  input, textarea, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+  }
+  .chat-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 400px;
+    height: 600px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    z-index: 1000;
+  }
+  
+  .chat-close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ff5c5c;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  .livekit-modal {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .livekit-modal h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .livekit-modal input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .livekit-modal .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .livekit-modal .modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .livekit-modal .modal-buttons .connect-btn {
+    background-color: #d62828;
+    color: white;
+  }
+  
+  .livekit-modal .modal-buttons .cancel-btn {
+    background-color: #6c757d;
+    color: white;
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 700px;
+    min-height: 500px; 
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* khoảng cách giữa các thành phần */
+  }
+  
+  .name-form h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .name-form input {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .name-form button[type="submit"] {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 10px; 
+    margin-bottom: 2px;/* <-- thêm dòng này để nút "Kết nối" cách input ra */
+  }
+  
+  .name-form .cancel-button {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+
+  }
+  .support-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007b83;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.support-button:hover {
+  background-color: #006066;
+  transform: translateY(-2px);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+}
+
+.page-banner {
+    background: linear-gradient(rgba(0,123,131,0.9), rgba(0,123,131,0.8));
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-content {
+    padding: 2rem 1rem;
+}

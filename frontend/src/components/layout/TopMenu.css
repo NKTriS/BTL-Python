@@ -1,0 +1,327 @@
+/* Add wrapper for full-width background */
+.top-menu-wrapper {
+    background: #f8f9fa; /* Light gray background */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 4px 0; /* Reduced from 8px to 4px */
+    border-bottom: 3px solid #007b83;
+}
+
+.top-menu {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem; /* Reduced from 0.8rem to 0.5rem */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.top-menu-separator {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,249,250,1) 100%);
+    z-index: 999;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2.5rem;
+    flex: 1;
+    margin-left: auto; /* Add auto margin to help with centering */
+    margin-right: auto; /* Add auto margin to help with centering */
+}
+
+.home-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Remove all previous underline effects */
+.menu-list li::after,
+.menu-link::after,
+.dropdown::after,
+.dropdown .menu-link::after,
+.dropdown-menu li::after,
+.menu-list li.dropdown::after {
+    display: none;
+}
+
+/* Add single unified underline effect */
+.menu-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 0.8rem 0;
+    position: relative;
+}
+
+.menu-link::after {
+    content: '';
+    display: block !important;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007b83;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.menu-link:hover {
+    color: #007b83;
+}
+
+/* Remove any other hover effects */
+.menu-list li:hover::after {
+    width: 0;
+}
+
+.search-icon {
+    position: absolute;
+    right: 5px;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #007b83;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 38px;
+    height: 38px;
+    box-shadow: 0 2px 8px rgba(0, 123, 131, 0.3);
+}
+
+.search-icon:hover {
+    background-color: #006066;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 123, 131, 0.4);
+}
+
+.search-wrapper:focus-within .search-icon {
+    background-color: #006066;
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+.dropdown-menu {
+    display: block; /* Changed from none to block */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 0.8rem 0;
+    min-width: 220px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease, visibility 2s ease;
+    pointer-events: none;
+}
+
+/* Add padding to create hover space between menu and dropdown */
+.dropdown::before {
+    content: '';
+    position: absolute;
+    height: 20px; /* Add space between menu and dropdown */
+    width: 100%;
+    bottom: -20px;
+    left: 0;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    top: -20px;
+    left: 0;
+}
+
+/* Animation for dropdown */
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Allows interaction when visible */
+    animation: fadeInDropdown 0.5s ease forwards;
+}
+
+/* Remove underline effect from menu-link inside dropdown */
+.dropdown .menu-link::after {
+    display: none;
+}
+
+/* Keep only the dropdown container underline effect */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007b83;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.dropdown:hover::after {
+    width: 100%;
+}
+
+/* Reset any inherited underline effects */
+.dropdown-menu li::after {
+    display: none;
+}
+
+.menu-list li.dropdown::after {
+    display: none;
+}
+
+.dropdown-link {
+    color: #2c3e50;
+    text-decoration: none;
+    display: block;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-link:hover {
+    background-color: rgba(0, 123, 131, 0.08);
+    color: #007b83;
+    padding-left: 32px;
+}
+
+/* Remove conflicting rules */
+.dropdown-menu li {
+    padding: 0; /* Reset padding since it's handled by dropdown-link */
+    font-weight: 500;
+    font-size: 0.92em;
+}
+
+.dropdown-menu li:hover {
+    background-color: transparent; /* Remove background since it's handled by dropdown-link */
+    padding-left: 0; /* Remove padding since it's handled by dropdown-link */
+}
+
+/* Remove the ::after and ::before pseudo-elements from dropdown menu items */
+.dropdown-menu li::after,
+.dropdown-menu li::before {
+    display: none;
+}
+
+.normal-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.normal-link:hover {
+    color: #333;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    border: 2px solid #eef2f7;
+    border-radius: 30px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    padding-right: 8px;
+}
+
+.search-wrapper:hover, .search-wrapper:focus-within {
+    border-color: #007b83;
+    box-shadow: 0 0 0 4px rgba(0, 123, 131, 0.1);
+}
+
+.search-input {
+    padding: 12px 55px 12px 20px;
+    border: none;
+    width: 220px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.search-input:focus {
+    width: 300px;
+}
+
+.search-input::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Scroll effect */
+.top-menu.scrolled {
+    padding: 0.8rem 3rem;
+    margin: 8px auto;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .menu-list {
+        gap: 1.5rem;
+    }
+    
+    .search-input {
+        width: 180px;
+    }
+    
+    .search-input:focus {
+        width: 240px;
+    }
+}
+
+/* Add padding to main content */
+.main-content {
+    margin-top: 5px; /* Reduced from 100px */
+    position: relative;
+    z-index: 1;
+}

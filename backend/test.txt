@@ -1,0 +1,6 @@
+1. Cung cấp sđt
+2. Hỏi về thông tin phòng khám
+2.1 Hỏi thêm dịch vụ ( giá cả, khuyến mãi, giờ làm việc,....)
+3. Đặt lịch khám (rồi disconnect)
+4. Lại cung cấp sdt
+5. Đổi lịch khám 

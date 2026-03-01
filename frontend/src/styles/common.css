@@ -1,0 +1,32 @@
+:root {
+  --overlay-light: rgba(255, 255, 255, 0.92);
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+}
+
+.page-background {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+}
+
+.page-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-light);
+  z-index: 0;
+}
+
+.home-bg {
+  background-image: url('/assets/images/home-bg.jpg');
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}

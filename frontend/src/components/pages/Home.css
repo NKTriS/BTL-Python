@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap');
+
+:root {
+    --primary: #007b83;
+    --primary-dark: #006066;
+    --accent: #4DA8DA;
+    --accent-dark: #357ABD;
+    --text-dark: #333;
+    --text-medium: #555;
+    --text-light: #666;
+    --border-light: #eee;
+    --bg-light: #f8f9fa;
+}
+
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('/assets/images/home-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #e6f7f9;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .left-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+  }
+  
+  .slogan {
+    font-size: 28px;
+    color: #007b83;
+    margin-bottom: 10px;
+  }
+  
+  .sub-slogan {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .combo-box {
+    background: #f5f7fa;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .combo-title {
+    color: #2c8a94;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .combo-price {
+    color: red;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .combo-note {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .book-button {
+    background-color: #4DA8DA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .book-button:hover {
+    background-color: #357ABD;
+  }
+  
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .booking-form select,
+  .booking-form input {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .booking-form select {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    min-height: auto; /* Remove fixed height */
+    width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+.booking-form select option {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    line-height: normal;
+}
+
+/* Remove the previous complex option styles */
+.booking-form select option:not(:first-child)::before,
+.booking-form select option:not(:first-child)::after {
+    content: none;
+}
+
+/* Keep the price display section */
+.price-display {
+    text-align: right;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.price-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 10px;
+}
+
+.price-amount {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #007b83;
+}
+  
+  .next-button {
+    background-color: #f5a623;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .next-button:hover {
+    background-color: #e59400;
+  }
+  
+  .assistant-box button {
+    background-color: #d62828; /* đỏ tươi */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    border-radius: 50px; /* <-- viên thuốc */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 180px;
+  }
+  
+  .assistant-box button:hover {
+    background-color: #b71c1c; /* đỏ đậm khi hover */
+  }
+
+  /* Booking Section */
+  .booking-section {
+    background-image: url('/assets/images/skinclinic-bg.jpg'); /* ảnh nền da liễu */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+    width: 100%;
+    position: relative;
+}
+
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Left Panel Enhancements */
+.left-panel {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.slogan {
+    font-size: 42px;
+    color: #007b83;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.sub-slogan {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.combo-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,123,131,0.1);
+}
+
+.combo-title {
+    font-size: 24px;
+    color: #e4097f;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.combo-price {
+    font-size: 36px;
+    color: #007b83;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+/* Right Panel Enhancements */
+.right-panel {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.right-panel h3 {
+    color: #e4097f;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.booking-form select,
+.booking-form input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.booking-form select:focus,
+.booking-form input:focus {
+    border-color: #007b83;
+    box-shadow: 0 0 0 3px rgba(0,123,131,0.1);
+    outline: none;
+}
+
+.price-display {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-label {
+    color: #666;
+    font-size: 16px;
+}
+
+.price-amount {
+    color: #e4097f;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.next-button {
+    width: 100%;
+    padding: 16px;
+    background: #007b83;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-button:hover {
+    background: #006066;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,123,131,0.2);
+}
+
+/* Doctors Section Enhancement */
+.doctors-section {
+    background: linear-gradient(180deg, #fff 0%, var(--bg-light) 100%);
+    padding: 100px 0;
+    position: relative;
+}
+
+.doctors-info {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.doctors-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 80px;
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.2;
+}
+
+.doctors-title:after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary) 20%, 
+        var(--primary) 80%, 
+        transparent 100%
+    );
+}
+
+.doctors-title:before {
+    content: '❖';
+    display: block;
+    color: var(--primary);
+    font-size: 28px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Add decorative elements */
+.doctors-title span {
+    display: block;
+    font-size: 16px;
+    color: var(--text-medium);
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: none;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+    .doctors-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+}
+
+.doctors-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+    padding: 20px;
+}
+
+.doctor-info-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 
+        0 5px 15px rgba(0,0,0,0.08),
+        0 15px 35px rgba(0,0,0,0.12);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.doctor-info-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.1),
+        0 20px 45px rgba(0,0,0,0.15);
+}
+
+.doctor-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+}
+
+.doctor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.doctor-info-card:hover .doctor-image {
+    transform: scale(1.05);
+}
+
+.doctor-image-wrapper:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+}
+
+.doctor-name {
+    background: white;
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 700;
+    padding: 30px;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.doctor-position {
+    color: #666;
+    font-size: 16px;
+    max-width: 280px;
+    line-height: 1.4;
+}
+
+.doctor-details {
+    background: white;
+    list-style: none;
+    padding: 25px 30px;
+    margin: 0;
+}
+
+.doctor-details li {
+    color: var(--text-medium);
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.doctor-details li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.doctor-details li:hover:before {
+    transform: translateX(5px);
+}
+
+.doctor-info-card:hover .doctor-details li {
+    color: var(--text-dark);
+}
+
+@media (max-width: 1200px) {
+    .doctors-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctors-section {
+        padding: 60px 0;
+    }
+    
+    .doctors-info {
+        padding: 0 20px;
+    }
+    
+    .doctor-image-wrapper {
+        height: 380px;
+    }
+    
+    .doctor-name {
+        font-size: 22px;
+        padding: 25px 20px;
+    }
+    
+    .doctor-details {
+        padding: 20px 25px;
+    }
+}
+
+/* New Styles for Doctors Section */
+.doctors-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.section-title {
+    color: #0066b3;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.doctors-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.doctor-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.doctor-image-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.doctor-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-name {
+    color: #0066b3;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 5px;
+}
+
+.doctor-position {
+    color: #666;
+    font-size: 16px;
+    max-width: 280px;
+    line-height: 1.4;
+}
+
+.doctor-info {
+    text-align: left;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.doctor-qualifications {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.doctor-qualifications li {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.doctor-qualifications li:before {
+    content: "•";
+    color: #0066b3;
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.doctor-profile {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.doctor-profile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.doctor-image-circle {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.doctor-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-name {
+    color: #0066b3;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.doctor-name:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #0066b3;
+    border-radius: 2px;
+}
+
+.doctor-info {
+    width: 100%;
+    text-align: left;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+.doctor-qualifications {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.doctor-qualifications li {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+    text-align: left;
+}
+
+.doctor-qualifications li:before {
+    content: "•";
+    color: #0066b3;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    top: -2px;
+}
+
+.doctors-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .doctor-profile {
+        padding: 30px 20px;
+    }
+    
+    .doctor-image-circle {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .doctor-name {
+        font-size: 22px;
+    }
+    
+    .doctors-container {
+        grid-template-columns: 1fr;
+    }
+}
